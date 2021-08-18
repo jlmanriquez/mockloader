@@ -1,0 +1,58 @@
+{
+    "data": [
+        {
+            "url": "https://domain\\.cl/api/sample",
+            "id": "i1zc8pkfyQ",
+            "method": "POST",
+            "type": "XHR",
+            "mocks": {
+                "x1dQmNzZUv": {
+                    "jsCode": "",
+                    "delay": 0,
+                    "headers": {
+                        "content-type": "application/json"
+                    },
+                    "id": "x1dQmNzZUv",
+                    "createdOn": "2021-07-14T13:00:26.387Z",
+                    "statusCode": 200,
+                    "response": "{\"result\":{\"is_ok\":true,\"description\":\"ok\"}}",
+                    "responseMock": "{\"result\":{\"is_ok\":true,\"description\":\"ok\"}}",
+                    "headersMock": {
+                        "content-type": "application/json"
+                    },
+                    "type": "application",
+                    "subType": "json"
+                }
+            },
+            "activeMock": "x1dQmNzZUv"
+        },
+        {
+            "url": "https://domain\\.cl/api/sample",
+            "id": "i1zc8pkfyZ",
+            "method": "POST",
+            "type": "XHR",
+            "mocks": {
+                "x1dQmNzZUz": {
+                    "jsCode": "",
+                    "delay": 0,
+                    "headers": {
+                        "content-type": "application/json"
+                    },
+                    "id": "x1dQmNzZUz",
+                    "createdOn": "2021-07-14T13:00:26.387Z",
+                    "statusCode": 200,
+                    "response": "{\"result\":{\"is_ok\":true,\"description\":\"ok\"}}",
+                    "responseMock": "{\"result\":{\"is_ok\":true,\"description\":\"ok\"}}",
+                    "headersMock": {
+                        "content-type": "application/json"
+                    },
+                    "type": "application",
+                    "subType": "json"
+                }
+            },
+            "activeMock": "x1dQmNzZUz"
+        }
+    ],
+    "domain": "localhost:4200",
+    "version": "2.9.8"
+}

@@ -1,0 +1,15 @@
+### Search using filter
+curl -X 'PUT' \
+  'http://localhost:1080/mockserver/retrieve?format=json&type=active_expectations' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "path": "/api/sample"
+  }'
+
+### Search without filter
+curl -X 'PUT' \
+  'http://localhost:1080/mockserver/retrieve?format=json&type=active_expectations'
+
+### Reset
+PUT http://localhost:1080/mockserver/reset HTTP/1.1
