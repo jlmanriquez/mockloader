@@ -1,0 +1,22 @@
+name: bridge
+version: 0.1.0
+author: Jose Luis Manriquez R. <jlmanriquezro@gmail.com>
+about: Populate a MockServer with mocks or 'expectations'
+args:
+  - host:
+      long: host
+      value_name: URL
+      help: Sets the mockserver host
+      takes_value: true
+      default_value: http://localhost:1080
+subcommands:
+  - create:
+      about: create a new expectations and upload to mockserver
+      args:
+        - file:
+            short: f
+            long: file
+            help: Ohmy-mock file export to read
+            default_value: mock.json
+  - search:
+      about: search active expectations in mockserver

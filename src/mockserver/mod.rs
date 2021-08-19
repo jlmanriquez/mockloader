@@ -25,7 +25,7 @@ impl Client {
 
         match resp.status() {
             StatusCode::CREATED => {
-                println!("expectation id {} created successfully", exp.id);
+                println!("✅ expectation id {} created successfully", exp.id);
                 Ok(())
             }
             StatusCode::BAD_REQUEST => Err("incorrect request format".into()),

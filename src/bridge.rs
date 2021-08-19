@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 
-use futures::future::try_join_all;
+use futures::future::{try_join_all};
 use url::Url;
 
 use crate::{
@@ -27,7 +27,7 @@ impl Bridge {
     pub async fn create_expectation(&self, filename: &str) -> Result<(), String> {
         let mocks = self.ohmymock_proc.get_mocks(filename)?;
         if mocks.is_empty() {
-            return Err("expectations not found".to_string());
+            return Err("⚠️  expectations not found".to_string());
         }
 
         let mut create_futures = vec![];
@@ -37,7 +37,19 @@ impl Bridge {
             .for_each(|e| {
                 let f = self.mockserver_cli.create_expectations(e.unwrap());
                 create_futures.push(f);
+                // create_futures.push(Box::pin(f));
             });
+
+        // while !create_futures.is_empty() {
+        //     match select_all(create_futures).await {
+        //         (Ok(_r), _index, remaining) => {
+        //             create_futures = remaining;
+        //         },
+        //         (Err(_e), _index, remaining) => {
+        //             create_futures = remaining;
+        //         },
+        //     }
+        // }
 
         if let Err(e) = try_join_all(create_futures).await {
             return Err(e.to_string());
@@ -63,7 +75,7 @@ impl Bridge {
         expectation.http_request.method = d.method.clone();
         expectation.http_request.path = {
             let url_str = d.url.replace("\\.", ".");
-            let url = Url::parse(&url_str).map_err(|_| "url invalida".to_string())?;
+            let url = Url::parse(&url_str).map_err(|_| "⚠️  url invalida".to_string())?;
             url.path().into()
         };
         expectation.http_response.body = active_mock.response.clone();
