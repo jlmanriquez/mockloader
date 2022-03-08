@@ -102,7 +102,7 @@ mod tests {
             id: "i1zc8pkfyQ".into(),
             method: "POST".into(),
             data_type: "XHR".into(),
-            mocks: mocks,
+            mocks,
             active_mock: "x1dQmNzZUv".into(),
         };
 
